@@ -1,0 +1,30 @@
+# Copy this file to terraform.tfvars and fill in your values
+# cp terraform.tfvars.example terraform.tfvars
+
+aws_region = "us-east-1"
+
+# Required: Get these from your Slack app settings
+slack_bot_token      = "xoxb-your-token-here"
+slack_signing_secret = "your-signing-secret-here"
+
+# Optional: Customize table names
+# dynamodb_tasks_table   = "slack-tasks"
+# dynamodb_config_table  = "slack-channel-config"
+
+# Optional: Customize defaults
+# default_tz         = "Asia/Jerusalem"
+# default_post_hours = "9,13,17"
+
+# Optional: Lambda configuration
+# lambda_function_name = "slack-tasks-bot"
+# lambda_timeout       = 60
+# lambda_memory_size   = 1024
+# lambda_runtime       = "nodejs18.x"
+
+# Choose one: Function URL (simpler) or API Gateway (more features)
+enable_function_url = true
+# enable_api_gateway = false
+
+# Optional: Schedule expression for EventBridge
+# schedule_expression = "rate(1 minute)"
+
