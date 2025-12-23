@@ -10,9 +10,11 @@ function buildChecklistBlocks(tasks) {
 
   const maxTasks = Math.min(tasks.length, 40);
   for (const t of tasks.slice(0, maxTasks)) {
+    // Use LRM (Left-to-Right Mark) to ensure task number stays on the left for Hebrew text
+    const lrm = '\u200E'; // Left-to-Right Mark
     blocks.push({
       type: "section",
-      text: { type: "mrkdwn", text: `*#${t.id}* — ${t.text}` },
+      text: { type: "mrkdwn", text: `${lrm}*#${t.id}* — ${t.text}` },
       accessory: {
         type: "button",
         text: { type: "plain_text", text: "Done" },
